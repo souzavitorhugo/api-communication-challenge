@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MAIN CSS STYLE -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- BOOTSTRAP CSS-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+
+    <title>Teste FrontEnd Useall</title>
+
+
+</head>
+
+<body>
+
+    <header id="cabecalho-nav" class="gradient-bg">
+
+        <nav class="navbar navbar-expand-lg navbar-light text-light">
+
+            <a class="navbar-brand" href="https://www.doo.com.br/"><img src="./assets/doo_logo-removebg.png" alt="Logo Doo "></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse align-items-center justify-content-center" id="navbarNavDropdown" style="width: fit-content;">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item active">
+                        <a class="nav-link text-light text-center" href="#groups">Grupo de Itens </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light text-center" href="#items"> Itens Cadastrados </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section id="welcome" class="my-3">
+
+        <h1 class="text-center w-100">
+            Seja Bem Vindo, Usuário!
+        </h1>
+
+        <div class="w-100 text-center my-4">
+            <a onclick="mostraRelatorio()" href="./relatorio.html" class="button-comando bg-color2 py-2 px-4" target="_blank" rel="noopener">
+                Acessar Relatório 
+            </a>
+        </div>
+
+    </section>
+
+    <hr>
+
+    <section id="groups-container" style="border: 2px solid black;">
+
+        <div class="w-100 text-center mt-2">
+            <h5> Grupos de Itens Cadastrados</h5>
+
+            <button id="add-group-item" class="button-comando bg-color2" data-toggle="modal" data-target="#modalCadastroGrupos">
+                Adicionar Grupo de Item
+            </button>
+        </div>
+
+        <div id="groups">
+
+        </div>
+
+        <div id="areaComandoGrupo" class="collapse">
+
+            <div class="w-100 d-flex align-items-center justify-content-center" style="border: 2px solid black; margin: auto 0;">
+
+                <div id="alterar-container-groups" class="d-flex flex-wrap align-items-center justify-content-center w-50">
+
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="items-container" style="border: 2px solid black;">
+
+        <div class="w-100 text-center mt-2">
+            <h5> Itens Cadastrados</h5>
+
+            <button id="add-item-button" class="button-comando bg-color2" data-toggle="modal" data-target="#modalCadastroItems">
+                Adicionar Item
+            </button>
+
+        </div>
+
+        <div id="items">
+
+        </div>
+
+        <div id="areaComandoItems" class="collapse">
+
+            <div class="w-100 d-flex align-items-center justify-content-center" style="border: 2px solid black; margin: auto 0;">
+
+                <div id="alterar-container-items" class="d-flex flex-wrap align-items-center justify-content-center w-50">
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Modal Cadastro de Grupos de Items -->
+    <div class="modal fade" id="modalCadastroGrupos" tabindex="-1" role="dialog" aria-labelledby="cadastroGrupos" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title text-center w-100" id="cadastroGrupos">Cadastro de Grupos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body"> 
+
+                    <form id="form-cadastro-grupo" class="w-100 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="input-container">
+                            <label for="nomeNovoGrupo" > Nome do Novo Grupo: </label>
+                            <input id="nomeNovoGrupo" type="text" name="Descricao" placeholder="Ex.: Informática">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="statusGrupo"> Selecione um Status: </label>
+                            <select name="Ativo" id="statusGrupo"> 
+                                <option value="" selected> Escolha um status </option>
+                                <option value="true"> Ativo </option>
+                                <option value="false"> Inativo </option>
+                            </select>    
+                        </div>
+                        
+                        <div class="input-container justify-content-center align-items-center">
+                            <input type="submit" class="button-comando btn-success" value="Cadastrar">
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <!-- Modal Cadastro de Items -->
+    <div class="modal fade" id="modalCadastroItems" tabindex="-1" role="dialog" aria-labelledby="cadastroItems" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title text-center w-100" id="cadastroItems">Cadastro de Itens</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body"> 
+
+                    <form action="" id="form-cadastro-item" class="w-100 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="input-container">
+                            <label for="descricaoItem" > Nome do Novo Item: </label>
+                            <input id="descricaoItem" type="text" name="Descricao" placeholder="Ex.: Computador">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="IdentificadorItem" > Identificador do Novo Item: </label>
+                            <input id="IdentificadorItem" type="text" name="Identificacao" placeholder="Ex.: COMP56">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="Ativo"> Selecione um Status: </label>
+                            <select name="Ativo" id="Ativo"> 
+                                <option value="" selected> Escolha um status </option>
+                                <option value="true"> Ativo </option>
+                                <option value="false"> Inativo </option>
+                            </select>    
+                        </div>
+
+                        <div class="input-container">
+                            <label for="CodigoGrupoItem" > Código Do Grupo do Item: </label>
+                            <select name="CodigoGrupoItem" id="CodigoGrupoItem">
+                                <option value="" selected> Escolha um Grupo</option>
+                            </select>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="observacaoItem" > Observação Novo Item: </label>
+                            <textarea id="observacaoItem" type="text" name="Obs" placeholder="Deixe Alguma Observação"> </textarea>
+                        </div>
+                        
+                        <div class="input-container justify-content-center align-items-center">
+                            <input type="submit" class="button-comando btn-success justify-content-center align-items-center" value="Cadastrar">
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <!-- Modal Alteracao de Items-->
+    <div class="modal fade" id="modalAlteraItem" tabindex="-1" role="dialog" aria-labelledby="alteracaoItem" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title text-center w-100" id="alteracaoItem">Alteração do Item  </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body"> 
+
+                    <form action="" id="form-altera-item" class="w-100 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="input-container">
+                            <label for="novoDescricaoItem" > Novo nome: </label>
+                            <input id="novoDescricaoItem" type="text" name="Descricao" placeholder="Ex.:">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="novoIdentificadorItem" > Novo Identificador do Item: </label>
+                            <input id="novoIdentificadorItem" type="text" name="Identificacao" placeholder="Ex.: COMP56">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="novoAtivo"> Selecione um Status: </label>
+                            <select name="Ativo" id="novoAtivo"> 
+                                <option class="novoOption" value=""> Escolha um status </option>
+                                <option class="novoOption" value="true"> Ativo </option>
+                                <option class="novoOption" value="false"> Inativo </option>
+                            </select>    
+                        </div>
+
+                        <div class="input-container">
+                            <label for="novoCodigoGrupoItem" > Código Do Grupo do Item: </label>
+                            <select name="novoCodigoGrupoItem" id="novoCodigoGrupoItem">
+                                <option value="" selected> Escolha um Grupo</option>
+                            </select>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="novoObservacaoItem" > Observação Novo Item: </label>
+                            <textarea id="novoObservacaoItem" type="text" name="Obs" placeholder="Deixe Alguma Observação"> </textarea>
+                        </div>
+                        
+                        <div class="input-container justify-content-center align-items-center">
+                            <input type="submit" class="button-comando btn-success justify-content-center align-items-center" value="Atualizar Item">
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal Alteracao de Grupos de Items -->
+    <div class="modal fade" id="modalAlteraGrupo" tabindex="-1" role="dialog" aria-labelledby="alteracaoGrupo" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title text-center w-100" id="alteracaoGrupo">Alteração de Grupos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body"> 
+
+                    <form id="form-altera-grupo" class="w-100 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="input-container">
+                            <label for="novoNomeGrupo" > Novo nome do Grupo: </label>
+                            <input id="novoNomeGrupo" type="text" name="Descricao" placeholder="Ex.: Informática">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="novoStatusGrupo"> Selecione um novo Status: </label>
+                            <select name="Ativo" id="novoStatusGrupo"> 
+                                <option value="" selected> Escolha um status </option>
+                                <option value="true"> Ativo </option>
+                                <option value="false"> Inativo </option>
+                            </select>    
+                        </div>
+                        
+                        <div class="input-container justify-content-center align-items-center">
+                            <input type="submit" class="button-comando btn-success" value="Cadastrar">
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+
+</body>
+
+<!-- JQUERY -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<!-- POPPERS E BOOTSRAP JS-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+</html>
