@@ -64,10 +64,7 @@ $(window).on('load', function(){
             //for que percorre todos os grupos e mostra em tela 
             for(var i = 0; i<GruposItems.length; i++){
     
-                $('#groups').append(('<div class="items-linhas"> <p class="text-center"> Cód Grupos de Itens: ' + GruposItems[i]['Id'] + ' - ' + GruposItems[i]['Descricao'] + '<a id="' + GruposItems[i]['Id'] + '" href="#areaComandoGrupo' + GruposItems[i]['Id'] + '" data-toggle="collapse"' + 
-                    'role="button" aria-expanded="false" aria-controls="areaComandoGrupo" class="fas fa-angle-down ml-3"></a> </p> <div id="areaComandoGrupo' +GruposItems[i]['Id'] + '" class="collapse"> <div class="d-flex flex-column align-items-center"> <button id="' + GruposItems[i]['Id'] + '" class="button-comando bg-color1"' + 
-                    'onclick="alteraGrupo(' + GruposItems[i]['Id'] + ')" data-toggle="modal" data-target="#modalAlteraGrupo"> Alterar Grupo de Item </button>'+
-                    ' <small class="text-center my-2"> A cada alteração, <br> favor recarregar a página (CTRL + F5 ou CTRL + SHIFT + R) </small> </div> </div> </div> '))
+                $('#groups').append(('<div class="items-linhas"> <p class="text-center"> Cód Grupos de Itens: ' + GruposItems[i]['Id'] + ' - ' + GruposItems[i]['Descricao'] + '</div> '))
             
                 $('#CodigoGrupoItem').append(('<option value="' + GruposItems[i]['Id'] + '">' + GruposItems[i]['Id'] + ' - ' + GruposItems[i]['Descricao'] + '</option>'))
             
